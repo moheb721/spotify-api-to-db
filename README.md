@@ -3,7 +3,8 @@ Collects data from spotify's api and stores it in a postgresql database
 
 Utilizes spotify's scope "user-recently-played" which returns 50 most recently played tracks.
 
-The script then checks if there have been any new songs played by comparing the played_at times of returned tracks and the stored tracks in database.
+The script then checks if there have been any new songs played by comparing the played_at
+times of returned tracks and the stored tracks in database.
     EXAMPLE:
         "2022-10-18T08:12:57.973Z" is the most recent played_at time in database
         "2022-10-18T09:12:57.973Z" is the played_at time for a track returned by spotify
@@ -11,6 +12,7 @@ The script then checks if there have been any new songs played by comparing the 
         Therefore, it will be added to database and so on until we get to a track that is equal to the former played_at time (meaning it is the same track).
 
 Database consists of 4 tables named 'tracks', 'recently_played', 'albums', and 'artists'
+
     tracks and recently_played have columns:
         id            - int4 (default)
         created_at    - timestamp (default)
