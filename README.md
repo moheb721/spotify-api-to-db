@@ -5,11 +5,11 @@ Utilizes spotify's scope "user-recently-played" which returns 50 most recently p
 
 The script then checks if there have been any new songs played by comparing the played_at
 times of returned tracks and the stored tracks in database.<br />
-    EXAMPLE:<br />
-        "2022-10-18T08:12:57.973Z" is the most recent played_at time in database<br />
-        "2022-10-18T09:12:57.973Z" is the played_at time for a track returned by spotify<br />
-        It was played 1 hour after the most recent track in database.<br />
-        Therefore, it will be added to database and so on until we get to a track that is equal to the former played_at time (meaning it is the same track).<br />
+&nbsp;&nbsp;&nbsp;&nbsp;EXAMPLE:<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"2022-10-18T08:12:57.973Z" is the most recent played_at time in database<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"2022-10-18T09:12:57.973Z" is the played_at time for a track returned by spotify<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It was played 1 hour after the most recent track in database.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Therefore, it will be added to database and so on until we get to a track that is equal to the former played_at time (meaning it is the same track).<br />
 
 Database consists of 4 tables named 'tracks', 'recently_played', 'albums', and 'artists'<br />
 
