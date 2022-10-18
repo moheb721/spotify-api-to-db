@@ -4,14 +4,14 @@ Collects data from spotify's api and stores it in a postgresql database
 Utilizes spotify's scope "user-recently-played" which returns 50 most recently played tracks.
 
 The script then checks if there have been any new songs played by comparing the played_at
-times of returned tracks and the stored tracks in database.
-    EXAMPLE:
-        "2022-10-18T08:12:57.973Z" is the most recent played_at time in database
-        "2022-10-18T09:12:57.973Z" is the played_at time for a track returned by spotify
-        It was played 1 hour after the most recent track in database.
-        Therefore, it will be added to database and so on until we get to a track that is equal to the former played_at time (meaning it is the same track).
+times of returned tracks and the stored tracks in database.<br />
+    EXAMPLE:<br />
+        "2022-10-18T08:12:57.973Z" is the most recent played_at time in database<br />
+        "2022-10-18T09:12:57.973Z" is the played_at time for a track returned by spotify<br />
+        It was played 1 hour after the most recent track in database.<br />
+        Therefore, it will be added to database and so on until we get to a track that is equal to the former played_at time (meaning it is the same track).<br />
 
-Database consists of 4 tables named 'tracks', 'recently_played', 'albums', and 'artists'
+Database consists of 4 tables named 'tracks', 'recently_played', 'albums', and 'artists'<br />
 
     tracks and recently_played have columns:
         id            - int4 (default)
@@ -65,5 +65,5 @@ Database consists of 4 tables named 'tracks', 'recently_played', 'albums', and '
         type          - varchar(255)
         uri           - varchar(255)
 
-This script has been formatted in such a way that it can be conviently deployed to AWS Lambda after importing the two external dependencies (spotipy and psycopg2)
+This script has been formatted in such a way that it can be conviently deployed to AWS Lambda after importing the two external dependencies (spotipy and psycopg2)<br />
     AWS Docs: https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
